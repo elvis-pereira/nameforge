@@ -1,0 +1,45 @@
+<div class="nameforge-content">
+  <form id="train-model">
+    <div class="form-group">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.name'}}">{{localize 'NAMEFORGE.TRAIN.name'}}</label>
+      <div class="form-fields">
+        <input type="text" name="modelName" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.iterations'}}">{{localize 'NAMEFORGE.TRAIN.iterations'}}</label>
+      <div class="form-fields">
+        <input type="number" name="iterations" value="500" min="1" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.errorThreshold'}}">{{localize 'NAMEFORGE.TRAIN.errorThreshold'}}</label>
+      <div class="form-fields">
+        <input type="number" name="errorThreshold" value="0.10" step="any" min="0" max="1" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.learningRate'}}">{{localize 'NAMEFORGE.TRAIN.learningRate'}}</label>
+      <div class="form-fields">
+        <input type="number" name="learningRate" value="0.01" step="any" min="0" max="1" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.timeout'}}">{{localize 'NAMEFORGE.TRAIN.timeout'}}</label>
+      <div class="form-fields">
+        <input type="number" name="timeout" value="0" min="0" step="1" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.trainingData'}}">{{localize 'NAMEFORGE.TRAIN.trainingData'}}</label>
+      <div class="form-fields">
+        <textarea name="trainingData" required></textarea>
+      </div>
+    </div>
+    <div class="flexrow">
+      <button name="train">{{localize 'NAMEFORGE.BUTTON.train'}}</button>
+      <button name="stop" type="button" disabled>{{localize 'NAMEFORGE.BUTTON.stop'}}</button>
+    </div>
+  </form>
+  <div id="results"><p></p></div>
+</div>

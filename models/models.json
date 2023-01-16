@@ -1,0 +1,70 @@
+{
+  "arabic-feminine": {
+    "name": "Arabic (Feminine)",
+    "path": "modules/nameforge/models/arabic-feminine.json"
+  },
+  "arabic-masculine": {
+    "name": "Arabic (Masculine)",
+    "path": "modules/nameforge/models/arabic-masculine.json"
+  },
+  "english-feminine": {
+    "name": "English (Feminine)",
+    "path": "modules/nameforge/models/english-feminine.json"
+  },
+  "english-masculine": {
+    "name": "English (Masculine)",
+    "path": "modules/nameforge/models/english-masculine.json"
+  },
+  "french-feminine": {
+    "name": "French (Feminine)",
+    "path": "modules/nameforge/models/french-feminine.json"
+  },
+  "french-masculine": {
+    "name": "French (Masculine)",
+    "path": "modules/nameforge/models/french-masculine.json"
+  },
+  "gree-feminine": {
+    "name": "Greek (Feminine)",
+    "path": "modules/nameforge/models/greek-feminine.json"
+  },
+  "greek-masculine": {
+    "name": "Greek (Masculine)",
+    "path": "modules/nameforge/models/greek-masculine.json"
+  },
+  "icelandic-feminine": {
+    "name": "Icelandic (Feminine)",
+    "path": "modules/nameforge/models/icelandic-feminine.json"
+  },
+  "icelandic-masculine": {
+    "name": "Icelandic (Masculine)",
+    "path": "modules/nameforge/models/icelandic-masculine.json"
+  },
+  "japanese-feminine": {
+    "name": "Japanese (Feminine)",
+    "path": "modules/nameforge/models/japanese-feminine.json"
+  },
+  "japanese-masculine": {
+    "name": "Japanese (Masculine)",
+    "path": "modules/nameforge/models/japanese-masculine.json"
+  },
+  "maori-feminine": {
+    "name": "Maori (Feminine)",
+    "path": "modules/nameforge/models/maori-feminine.json"
+  },
+  "maori-masculine": {
+    "name": "Maori (Masculine)",
+    "path": "modules/nameforge/models/maori-masculine.json"
+  },
+  "south-african-feminine": {
+    "name": "South African (Feminine)",
+    "path": "modules/nameforge/models/south-african-feminine.json"
+  },
+  "south-african-masculine": {
+    "name": "South African (Masculine)",
+    "path": "modules/nameforge/models/south-african-masculine.json"
+  },
+  "tolkien": {
+    "name": "Tolkien",
+    "path": "modules/nameforge/models/tolkien.json"
+  }
+}

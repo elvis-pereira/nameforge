@@ -1,0 +1,33 @@
+<form id="nameforge">
+  <div class="form-group" data-tooltip-direction="UP">
+    <label data-tooltip="{{localize 'NAMEFORGE.INFO.model'}}">{{localize 'NAMEFORGE.GENERATE.models'}}</label>
+    <div class="form-fields">
+      <select name="model">
+        {{#if userModels}}
+        <optgroup label="{{localize 'NAMEFORGE.MODELS.userModels'}}">
+          {{#each userModels}}
+          <option value="{{this.path}}">{{this.name}}</option>
+          {{/each}}
+        </optgroup>
+        {{/if}}
+        <optgroup label="{{localize 'NAMEFORGE.MODELS.defaultModels'}}">
+          {{#each defaultModels}}
+          <option value="{{this.path}}">{{this.name}}</option>
+          {{/each}}
+        </optgroup>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label data-tooltip="{{localize 'NAMEFORGE.INFO.seed'}}">{{localize 'NAMEFORGE.GENERATE.seed'}}</label>
+    <div class="form-fields">
+      <input type="text" name="seed">
+    </div>
+  </div>
+  <div class="form-group">
+    <label data-tooltip="{{localize 'NAMEFORGE.INFO.temperature'}}">{{localize 'NAMEFORGE.GENERATE.temperature'}}</label>
+    <div class="form-fields">
+      <input type="number" name="temperature" value="1" min="0.1" step="any" required>
+    </div>
+  </div>
+</form>

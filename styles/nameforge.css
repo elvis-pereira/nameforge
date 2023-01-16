@@ -1,0 +1,25 @@
+.nf-tags {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.nf-tag {
+  margin: 0.15rem;
+  align-items: center;
+  background-color: #c9c7bd;
+  border-radius: 4px;
+  display: inline-flex;
+  height: 1.5em;
+  justify-content: center;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.nf-progress {
+  height: 1rem;
+  width: 100%;
+}
