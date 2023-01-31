@@ -56,7 +56,7 @@ build:
   stage: build
   script:
     - export VERSION=$(pnpm --silent exec semantic-release --dry-run | ack -io '(?<=The next release version is )(.*)(?=$)') && echo VERSION=$VERSION >> build.env
-    - export MANIFEST=$CI_PROJECT_URL/-/releases/v$VERSION/downloads/module.json && echo MANIFEST=$MANIFEST >> build.env
+    - export MANIFEST=$CI_PROJECT_URL/-/releases/permalink/latest/downloads/module.json && echo MANIFEST=$MANIFEST >> build.env
     - export DOWNLOAD=$CI_PROJECT_URL/-/releases/v$VERSION/downloads/module.zip && echo DOWNLOAD=$DOWNLOAD >> build.env
     - pnpm run build
     - pnpm run package
