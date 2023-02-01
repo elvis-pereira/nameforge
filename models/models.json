@@ -7,6 +7,14 @@
     "name": "Arabic (Masculine)",
     "path": "modules/nameforge/models/arabic-masculine.json"
   },
+  "egyptian-feminine": {
+    "name": "Egyptian (Feminine)",
+    "path": "modules/nameforge/models/egyptian-feminine.json"
+  },
+  "egyptian-masculine": {
+    "name": "Egyptian (Masculine)",
+    "path": "modules/nameforge/models/egyptian-masculine.json"
+  },
   "english-feminine": {
     "name": "English (Feminine)",
     "path": "modules/nameforge/models/english-feminine.json"
@@ -23,13 +31,21 @@
     "name": "French (Masculine)",
     "path": "modules/nameforge/models/french-masculine.json"
   },
-  "gree-feminine": {
+  "greek-feminine": {
     "name": "Greek (Feminine)",
     "path": "modules/nameforge/models/greek-feminine.json"
   },
   "greek-masculine": {
     "name": "Greek (Masculine)",
     "path": "modules/nameforge/models/greek-masculine.json"
+  },
+  "hindi-feminine": {
+    "name": "Hindi (Feminine)",
+    "path": "modules/nameforge/models/hindi-feminine.json"
+  },
+  "hindi-masculine": {
+    "name": "Hindi (Masculine)",
+    "path": "modules/nameforge/models/hindi-masculine.json"
   },
   "icelandic-feminine": {
     "name": "Icelandic (Feminine)",
@@ -55,6 +71,14 @@
     "name": "Maori (Masculine)",
     "path": "modules/nameforge/models/maori-masculine.json"
   },
+  "old-norse-feminine": {
+    "name": "Old Norse (Feminine)",
+    "path": "modules/nameforge/models/old-norse-feminine.json"
+  },
+  "old-norse-masculine": {
+    "name": "Old Norse (Masculine)",
+    "path": "modules/nameforge/models/old-norse-masculine.json"
+  },
   "south-african-feminine": {
     "name": "South African (Feminine)",
     "path": "modules/nameforge/models/south-african-feminine.json"
@@ -62,6 +86,14 @@
   "south-african-masculine": {
     "name": "South African (Masculine)",
     "path": "modules/nameforge/models/south-african-masculine.json"
+  },
+  "swedish-feminine": {
+    "name": "Swedish (Feminine)",
+    "path": "modules/nameforge/models/swedish-feminine.json"
+  },
+  "swedish-masculine": {
+    "name": "Swedish (Masculine)",
+    "path": "modules/nameforge/models/swedish-masculine.json"
   },
   "tolkien": {
     "name": "Tolkien",
