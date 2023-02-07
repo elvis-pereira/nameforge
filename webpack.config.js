@@ -1,3 +1,4 @@
+import { ESBuildMinifyPlugin } from 'esbuild-loader';
 import { resolve } from 'node:path';
 import webpack from 'webpack';
 
@@ -21,6 +22,13 @@ const config = {
   ],
 
   optimization: {
+    minimizer: [
+      new ESBuildMinifyPlugin({
+        target: 'es2021',
+        keepNames: true,
+        sourcemap: true
+      })
+    ],
     splitChunks: {
       cacheGroups: {
         vendor: {

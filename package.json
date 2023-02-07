@@ -19,6 +19,7 @@
     "@semantic-release/gitlab": "^9.5.1",
     "adm-zip": "^0.5.10",
     "conventional-changelog-conventionalcommits": "^5.0.0",
+    "esbuild-loader": "^2.21.0",
     "jsonlint": "^1.6.3",
     "semantic-release": "^19.0.5",
     "semistandard": "^16.0.1",
