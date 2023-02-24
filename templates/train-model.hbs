@@ -7,6 +7,15 @@
       </div>
     </div>
     <div class="form-group">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.type'}}">{{localize 'NAMEFORGE.TRAIN.type'}}</label>
+      <div class="form-fields">
+        <select name="type" required>
+          <option value="name">{{localize 'NAMEFORGE.GENERATE.names'}}</option>
+          <option value="surname">{{localize 'NAMEFORGE.GENERATE.surnames'}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
       <label data-tooltip="{{localize 'NAMEFORGE.INFO.iterations'}}">{{localize 'NAMEFORGE.TRAIN.iterations'}}</label>
       <div class="form-fields">
         <input type="number" name="iterations" value="500" min="1" required>

@@ -1,52 +1,19 @@
 <div class="nameforge-content">
   {{#if actor}}
-    <p data-tooltip="{{localize 'NAMEFORGE.INFO.generators'}}">{{localize 'NAMEFORGE.GENERATE.generators'}}</p>
-    <div class="nf-tags" id="nameChangers"></div>
+  <p data-tooltip="{{localize 'NAMEFORGE.INFO.generators'}}">{{localize 'NAMEFORGE.GENERATE.generators'}}</p>
+  <div class="nf-tags" id="nameChangers"></div>
   {{/if}}
   <form id="nameforge">
-    <div class="form-group">
-      <label data-tooltip="{{localize 'NAMEFORGE.INFO.model'}}">{{localize 'NAMEFORGE.GENERATE.models'}}</label>
-      <div class="form-fields">
-        <select name="model">
-          {{#if models.userModels}}
-          <optgroup label="{{localize 'NAMEFORGE.MODELS.userModels'}}">
-            {{#each models.userModels}}
-            <option value="{{this.path}}">{{this.name}}</option>
-            {{/each}}
-          </optgroup>
-          {{/if}}
-          <optgroup label="{{localize 'NAMEFORGE.MODELS.defaultModels'}}">
-            {{#each models.defaultModels}}
-            <option value="{{this.path}}">{{this.name}}</option>
-            {{/each}}
-          </optgroup>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label data-tooltip="{{localize 'NAMEFORGE.INFO.seed'}}">{{localize 'NAMEFORGE.GENERATE.seed'}}</label>
-      <div class="form-fields">
-        <input type="text" name="seed">
-      </div>
-    </div>
-    <div class="form-group">
-      <label data-tooltip="{{localize 'NAMEFORGE.INFO.temperature'}}">{{localize 'NAMEFORGE.GENERATE.temperature'}}</label>
-      <div class="form-fields">
-        <input type="number" name="temperature" value="1" min="0.1" step="0.1" required>
-      </div>
-    </div>
-    <div class="form-group">
-      <label data-tooltip="{{localize 'NAMEFORGE.INFO.count'}}">{{localize 'NAMEFORGE.GENERATE.count'}}</label>
-      <div class="form-fields">
-        <input type="number" name="count" value="1" min="1" required>
-      </div>
-    </div>
+    {{> 'modules/nameforge/templates/partials/generate-options.hbs'}}
     <div class="flexrow" id="actionButtons">
-      <button>{{localize 'NAMEFORGE.BUTTON.generate'}}</button>
+      <button name="generate">{{localize 'NAMEFORGE.BUTTON.generate'}}</button>
+      {{#if actor}}
+      <button name="add">{{localize 'NAMEFORGE.BUTTON.add'}}</button>
+      {{/if}}
     </div>
   </form>
   {{#if actor}}
-    <p name="original">{{localize 'NAMEFORGE.GENERATE.originalName'}}</p>
+  <p name="original">{{localize 'NAMEFORGE.GENERATE.originalName'}}</p>
   {{/if}}
   <p>{{localize 'NAMEFORGE.GENERATE.namesList'}}</p>
   <div class="nf-tags" id="names"></div>

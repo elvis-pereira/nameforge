@@ -1,0 +1,121 @@
+<ol class="nf-table">
+  <li class="flexrow nf-table-header">
+    <div class="nf-column">
+      <label>{{localize 'NAMEFORGE.GENERATE.type'}}</label>
+    </div>
+    <div class="nf-column nf-row-3">
+      <label>{{localize 'NAMEFORGE.GENERATE.model'}}</label>
+    </div>
+    {{#if show.seed}}
+    <div class="nf-column nf-row-2">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.seed'}}">{{localize
+        'NAMEFORGE.GENERATE.seed'}}</label>
+    </div>
+    {{/if}}
+    {{#if show.temperature}}
+    <div class="nf-column nf-text-centered">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.temperature'}}">{{localize
+        'NAMEFORGE.GENERATE.temperature'}}</label>
+    </div>
+    {{/if}}
+    {{#if show.count}}
+    <div class="nf-column nf-text-centered">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.count'}}">{{localize
+        'NAMEFORGE.GENERATE.count'}}</label>
+    </div>
+    {{/if}}
+    {{#if show.weight}}
+    <div class="nf-column nf-text-centered">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.weight'}}">{{localize 'NAMEFORGE.GENERATE.weight'}}</label>
+    </div>
+    {{/if}}
+  </li>
+  <li class="flexrow">
+    <div class="nf-column">
+      <label>{{localize 'NAMEFORGE.GENERATE.names'}}</label>
+    </div>
+    <div class="nf-column nf-row-3">
+      <select name="nameModel">
+        {{#select config.name.model}}
+        <option value="none">{{localize 'NAMEFORGE.GENERATE.none'}}</option>
+        {{#if models.userModels.names}}
+        <optgroup label="{{localize 'NAMEFORGE.MODELS.userModels'}}">
+          {{#each models.userModels.names}}
+          <option value="{{this.path}}">{{this.name}}</option>
+          {{/each}}
+        </optgroup>
+        {{/if}}
+        <optgroup label="{{localize 'NAMEFORGE.MODELS.defaultModels'}}">
+          {{#each models.defaultModels.names}}
+          <option value="{{this.path}}">{{this.name}}</option>
+          {{/each}}
+        </optgroup>
+        {{/select}}
+      </select>
+    </div>
+    {{#if show.seed}}
+    <div class="nf-column nf-row-2">
+      <input type="text" name="nameSeed">
+    </div>
+    {{/if}}
+    {{#if show.temperature}}
+    <div class="nf-column nf-text-centered">
+      <input type="number" name="nameTemperature" value="{{config.name.temperature}}" min="0.1" step="0.1" required>
+    </div>
+    {{/if}}
+    {{#if show.count}}
+    <div class="nf-column nf-text-centered">
+      <input type="number" name="nameCount" value="{{config.name.count}}" min="1" required>
+    </div>
+    {{/if}}
+    {{#if show.weight}}
+    <div class="nf-column nf-text-centered">
+      <input type="number" name="nameWeight" value="1" min="1" required>
+    </div>
+    {{/if}}
+  </li>
+  <li class="flexrow">
+    <div class="nf-column">
+      <label>{{localize 'NAMEFORGE.GENERATE.surnames'}}</label>
+    </div>
+    <div class="nf-column nf-row-3">
+      <select name="surnameModel">
+        {{#select config.surname.model}}
+        <option value="none">{{localize 'NAMEFORGE.GENERATE.none'}}</option>
+        {{#if models.userModels.surnames}}
+        <optgroup label="{{localize 'NAMEFORGE.MODELS.userModels'}}">
+          {{#each models.userModels.surnames}}
+          <option value="{{this.path}}">{{this.name}}</option>
+          {{/each}}
+        </optgroup>
+        {{/if}}
+        <optgroup label="{{localize 'NAMEFORGE.MODELS.defaultModels'}}">
+          {{#each models.defaultModels.surnames}}
+          <option value="{{this.path}}">{{this.name}}</option>
+          {{/each}}
+        </optgroup>
+        {{/select}}
+      </select>
+    </div>
+    {{#if show.seed}}
+    <div class="nf-column nf-row-2">
+      <input type="text" name="surnameSeed">
+    </div>
+    {{/if}}
+    {{#if show.temperature}}
+    <div class="nf-column nf-text-centered">
+      <input type="number" name="surnameTemperature" value="{{config.surname.temperature}}" min="0.1" step="0.1" required>
+    </div>
+    {{/if}}
+    {{#if show.count}}
+    <div class="nf-column nf-text-centered">
+      <input type="number" name="surnameCount" value="{{config.surname.count}}" min="1" required>
+    </div>
+    {{/if}}
+    {{#if show.weight}}
+    <div class="nf-column nf-text-centered">
+      <input type="number" name="surnameWeight" value="1" min="1" required>
+    </div>
+    {{/if}}
+  </li>
+</ol>

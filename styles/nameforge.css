@@ -23,3 +23,35 @@
   height: 1rem;
   width: 100%;
 }
+
+ol.nf-table {
+  padding: 0;
+}
+
+ol.nf-table li.nf-table-header {
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--color-border-light-secondary);
+  margin: 0 0 0.5rem 0;
+  padding: 0.3rem;
+  font-weight: bold;
+}
+
+.nf-column {
+  padding: 0.05rem;
+}
+
+.nf-column.nf-row-2 {
+  flex: 2;
+}
+
+.nf-column.nf-row-3 {
+  flex: 3;
+}
+
+.nf-column select {
+  width: 100%;
+}
+
+.nf-text-centered {
+  text-align: center;
+}

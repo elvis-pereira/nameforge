@@ -100,6 +100,49 @@ export default class NameForge {
   }
 
   /**
+   * Filter models by type.
+   * @param {Object} models Object containing all the grouped models.
+   * @returns {Object} An object containing the grouped models separated by type.
+   */
+  static filterModels (models) {
+    return {
+      userModels: {
+        names: Object.values(models.userModels).filter(model => !model?.type || model?.type === 'name'),
+        surnames: Object.values(models.userModels).filter(model => model?.type === 'surname')
+      },
+      defaultModels: {
+        names: Object.values(models.defaultModels).filter(model => !model?.type || model?.type === 'name'),
+        surnames: Object.values(models.defaultModels).filter(model => model?.type === 'surname')
+      }
+    };
+  }
+
+  /**
+   * Simple or weighted random selection.
+   * @param {Array} data Array with the possible options that can be selected.
+   * @returns The randomly selected entry.
+   */
+  selectRandom (data) {
+    const entries = data.map(entry => {
+      const weight = entry?.weight ?? 1;
+      return { ...entry, ...{ weight: weight } };
+    });
+
+    const weightSum = entries.reduce((accumulator, entry) => accumulator + Number(entry.weight), 0);
+    let selectedWeight = Math.random() * weightSum;
+
+    for (let index = 0; index < entries.length; index++) {
+      const entry = entries[index];
+
+      if (selectedWeight < entry.weight) {
+        return entry;
+      }
+
+      selectedWeight -= entry.weight;
+    }
+  }
+
+  /**
    * Capitalize the first letter of a string (with internationalization support).
    * @param {string} string A string to be capitalized.
    * @param {string} locale Language code used to define the correct capitalization.
@@ -142,5 +185,38 @@ export default class NameForge {
     const name = this.capitalize(options.seed + model.run(options.seed.toLowerCase(), true, options.temperature));
 
     return [name];
+  }
+
+  /**
+   * Generate one or more full names using the supplied models.
+   * @param {NeuralNetwork} nameModel Pre-trained model that will be used to predict names.
+   * @param {NeuralNetwork} surnameModel Pre-trained model that will be used to predict surnames.
+   * @param {Object} userOptions User supplied option to fine tune predictions.
+   * @returns {Array} An array with each predicted full name.
+   */
+  generateFullName (nameModel, surnameModel, userOptions = { name: {}, surname: {} }) {
+    const options = {
+      name: {
+        count: 1,
+        seed: '',
+        temperature: 1,
+        ...userOptions.name
+      },
+      surname: {
+        count: 1,
+        seed: '',
+        temperature: 1,
+        ...userOptions.surname
+      }
+    };
+
+    const names = this.generateName(nameModel, options.name);
+    const fullNames = names.map(name => {
+      const surnameCount = Math.round(Math.random() * (options.surname.count - 1) + 1);
+      const surnames = this.generateName(surnameModel, { ...options.surname, ...{ count: surnameCount } });
+      return `${name} ${surnames.join(' ')}`;
+    });
+
+    return fullNames;
   }
 }

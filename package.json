@@ -40,11 +40,13 @@
       "foundry",
       "FormData",
       "Application",
+      "FormApplication",
       "onmessage",
       "postMessage",
       "self",
       "Worker",
-      "File"
+      "File",
+      "loadTemplates"
     ]
   }
 }

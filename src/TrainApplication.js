@@ -5,17 +5,18 @@ export default class TrainApplication extends Application {
    * Save model to disk and update models list.
    * @param {string} modelName Display name of the model
    * @param {string} model JSON encoded model.
+   * @param {string('name' | 'surname')} type The type of the model.
    */
-  async saveModel (modelName, model) {
+  async saveModel (modelName, model, type) {
     const fileName = modelName.toLowerCase().replace(/\s/g, '-').replace(/[^a-z0-9_-]/g, '');
     const response = await fetch('nameforge-models/models.json');
     const userModels = await response.json();
-    userModels[fileName] = { name: modelName, path: `nameforge-models/${fileName}.json` };
+    userModels[fileName] = { name: modelName, path: `nameforge-models/${fileName}.json`, type: type };
 
     await FilePicker.upload('data', 'nameforge-models', new File([model], `${fileName}.json`, { type: 'application/json' }), {}, { notify: false });
     await FilePicker.upload('data', 'nameforge-models', new File([JSON.stringify(userModels, null, 2)], 'models.json', { type: 'application/json' }));
 
-    game.modules.get('nameforge').models.userModels[fileName] = { name: modelName, path: `nameforge-models/${fileName}.json` };
+    game.modules.get('nameforge').models.userModels[fileName] = { name: modelName, path: `nameforge-models/${fileName}.json`, type: type };
   }
 
   /**
@@ -52,7 +53,7 @@ export default class TrainApplication extends Application {
       stopButton.disabled = false;
 
       const formData = Object.fromEntries(new FormData(form).entries());
-      const { modelName, errorThreshold, iterations, learningRate, timeout, trainingData } = formData;
+      const { modelName, errorThreshold, iterations, learningRate, timeout, trainingData, type } = formData;
       const options = {
         ...(timeout > 0 && { timeout: timeout * 60000 }),
         ...(iterations > 0 && { iterations: iterations }),
@@ -71,7 +72,7 @@ export default class TrainApplication extends Application {
       stopButton.addEventListener('click', async () => {
         worker.terminate();
 
-        await this.saveModel(modelName, bestIteration.model);
+        await this.saveModel(modelName, bestIteration.model, type);
 
         submitButton.disabled = false;
         stopButton.disabled = true;
@@ -96,7 +97,7 @@ export default class TrainApplication extends Application {
         }
 
         if (name === 'complete') {
-          await this.saveModel(modelName, model);
+          await this.saveModel(modelName, model, type);
 
           submitButton.disabled = false;
           stopButton.disabled = true;

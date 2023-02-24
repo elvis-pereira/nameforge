@@ -3,6 +3,7 @@
     "BUTTON": {
       "add": "Add",
       "generate": "Generate",
+      "save": "Save",
       "stop": "Stop training",
       "train": "Train"
     },
@@ -11,30 +12,43 @@
       "clipboard": "Name copied to clipboard",
       "count": "Quantity",
       "generators": "Auto generators (click to remove):",
-      "models": "Model",
+      "model": "Model",
+      "names": "Names",
       "namesList": "List of names:",
+      "none": "None",
       "originalName": "Original name ",
       "seed": "Prefix",
-      "temperature": "Randomness"
+      "surnames": "Surnames",
+      "temperature": "Randomness",
+      "type": "Type",
+      "weight": "Weight"
     },
     "INFO": {
-      "count": "Quantity of unique names to be generated",
+      "count": "Quantity of unique names to be generated. When generating full names, the surname's quantity is the maximum number of surnames included in the full name",
       "errorThreshold": "The acceptable error in the names prediction, must be a value between 0 and 1. ATTENTION: Setting this value to a number too low can cause the model to \"over-fit\" and only generate names from the original list, some degree of error is desired to allow for more unique names",
       "generators": "List of models that can be used to automatically rename a token dropped to the canvas",
       "iterations": "The number of times that the names will be feed into the model to be trained, must be a value greater than 0",
       "learningRate": "How much the model will change the values trying to get the predictions right, highers values will speed up training but can increase loss, lower values do the opposite but increase the chances of \"overfitting\" the model",
-      "model": "Model used to generate new names",
       "name": "The name that will be shown in the models list",
       "seed": "The name prefix, names will include that and will be generated accordingly",
       "temperature": "The randomness of the generated names, values below 1 will generate names closer to the originals while values above 1 do the opposite",
       "timeout": "The maximum number of minutes that the training can take, use 0 to disable",
-      "trainingData": "A comma separated list of names that will be used to train the model"
+      "trainingData": "A comma separated list of names that will be used to train the model",
+      "type": "The type of model that will be created",
+      "weight": "Chance of the model being selected to generate new names. When generating full names, the value of name weight will be used"
     },
     "MODELS": {
       "defaultModels": "Default",
       "userModels": "User"
     },
+    "SETTINGS": {
+      "hint": "Configure the default values used for name generation",
+      "label": "Configure",
+      "name": "Name generation",
+      "saved": "Configuration saved"
+    },
     "TITLE": {
+      "config": "Configure default values",
       "generate": "Generate new names",
       "train": "Train new model"
     },
@@ -44,7 +58,8 @@
       "learningRate": "Learning rate",
       "name": "Model name",
       "timeout": "Timeout",
-      "trainingData": "Names"
+      "trainingData": "Names",
+      "type": "Type"
     }
   }
 }

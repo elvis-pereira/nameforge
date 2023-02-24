@@ -3,6 +3,7 @@
     "BUTTON": {
       "add": "Adicionar",
       "generate": "Gerar",
+      "save": "Salvar",
       "stop": "Parar treinamento",
       "train": "Treinar"
     },
@@ -11,30 +12,43 @@
       "clipboard": "Nome copiado para a área de transferência",
       "count": "Quantidade",
       "generators": "Geradores automáticos (clique para remover):",
-      "models": "Modelo",
+      "model": "Modelo",
+      "names": "Nomes",
       "namesList": "Lista de nomes:",
+      "none": "Nenhum",
       "originalName": "Nome original",
       "seed": "Prefixo",
-      "temperature": "Aleatoriedade"
+      "surnames": "Sobrenomes",
+      "temperature": "Aleatoriedade",
+      "type": "Tipo",
+      "weight": "Peso"
     },
     "INFO": {
-      "count": "Quantidade de nomes únicos a serem gerados",
+      "count": "Quantidade de nomes únicos a serem gerados. Ao gerar nomes completos, a quantidade de sobrenomes é o número máximo de sobrenomes incluídos no nome completo",
       "errorThreshold": "O erro aceitável na predição dos nomes, deve ser um valor entre 0 e 1. ATENÇÃO: Definir este valor para um número muito baixo pode fazer com que o modelo \"ajuste demais\" e gere apenas nomes da lista original, algum grau de erro \né desejado para permitir nomes mais exclusivos",
       "generators": "Lista de modelos que podem ser usados para renomear automaticamente um token colocado na tela",
       "iterations": "O número de vezes que os nomes serão inseridos no modelo a ser treinado deve ser um valor maior que 0",
       "learningRate": "Quanto o modelo vai mudar os valores tentando acertar as previsões, valores mais altos vão acelerar o treinamento, mas podem aumentar a perda, valores mais baixos fazem o oposto, mas aumentam as chances de \"ajustar\" o modelo",
-      "model": "Modelo usado para gerar novos nomes",
       "name": "O nome que será mostrado na lista de modelos",
       "seed": "O prefixo do nome, nomes incluirão o prefixo e serão gerados de acordo",
       "temperature": "A aleatoriedade dos nomes gerados, valores abaixo de 1 vão gerar nomes mais próximos dos originais enquanto valores acima de 1 fazem o contrário",
       "timeout": "O número máximo de minutos que o treinamento pode levar, use 0 para desativar",
-      "trainingData": "Uma lista separada por vírgulas de nomes que serão usados ​​para treinar o modelo"
+      "trainingData": "Uma lista separada por vírgulas de nomes que serão usados ​​para treinar o modelo",
+      "type": "O tipo de modelo que será criado",
+      "weight": "Chance do modelo ser selecionado para gerar novos nomes. Ao gerar nomes completos, o valor do peso do nome será usado"
     },
     "MODELS": {
       "defaultModels": "Padrão",
       "userModels": "Usuário"
     },
+    "SETTINGS": {
+      "hint": "Configure os valores padrão usados para geração de nomes",
+      "label": "Configurar",
+      "name": "Geração de nomes",
+      "saved": "Configuração salva"
+    },
     "TITLE": {
+      "config": "Configurar valores padrão",
       "generate": "Gerar novos nomes",
       "train": "Treinar novo modelo"
     },
@@ -44,7 +58,8 @@
       "learningRate": "Taxa de aprendizagem",
       "name": "Nome do modelo",
       "timeout": "Tempo esgotado",
-      "trainingData": "Nomes"
+      "trainingData": "Nomes",
+      "type": "Tipo"
     }
   }
 }
