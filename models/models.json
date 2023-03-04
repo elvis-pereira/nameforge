@@ -9,6 +9,21 @@
     "name": "Arabic (Masculine)",
     "path": "modules/nameforge/models/arabic-masculine.json"
   },
+  "chinese-feminine": {
+    "type": "name",
+    "name": "Chinese (Feminine)",
+    "path": "modules/nameforge/models/chinese-feminine.json"
+  },
+  "chinese-masculine": {
+    "type": "name",
+    "name": "Chinese (Masculine)",
+    "path": "modules/nameforge/models/chinese-masculine.json"
+  },
+  "chinese-surnames": {
+    "type": "surname",
+    "name": "Chinese (Surnames)",
+    "path": "modules/nameforge/models/chinese-surnames.json"
+  },
   "arabic-surnames": {
     "type": "surname",
     "name": "Arabic (Surnames)",
@@ -53,6 +68,21 @@
     "type": "surname",
     "name": "French (Surnames)",
     "path": "modules/nameforge/models/french-surnames.json"
+  },
+  "german-feminine": {
+    "type": "name",
+    "name": "German (Feminine)",
+    "path": "modules/nameforge/models/german-feminine.json"
+  },
+  "german-masculine": {
+    "type": "name",
+    "name": "German (Masculine)",
+    "path": "modules/nameforge/models/german-masculine.json"
+  },
+  "german-surnames": {
+    "type": "surname",
+    "name": "German (Surnames)",
+    "path": "modules/nameforge/models/german-surnames.json"
   },
   "greek-feminine": {
     "type": "name",
@@ -104,6 +134,21 @@
     "name": "Indigenous American (Masculine)",
     "path": "modules/nameforge/models/indigenous-american-masculine.json"
   },
+  "italian-feminine": {
+    "type": "name",
+    "name": "Italian (Feminine)",
+    "path": "modules/nameforge/models/italian-feminine.json"
+  },
+  "italian-masculine": {
+    "type": "name",
+    "name": "Italian (Masculine)",
+    "path": "modules/nameforge/models/italian-masculine.json"
+  },
+  "italian-surnames": {
+    "type": "surname",
+    "name": "Italian (Surnames)",
+    "path": "modules/nameforge/models/italian-surnames.json"
+  },
   "japanese-feminine": {
     "type": "name",
     "name": "Japanese (Feminine)",
@@ -118,6 +163,16 @@
     "type": "surname",
     "name": "Japanese (Surnames)",
     "path": "modules/nameforge/models/japanese-surnames.json"
+  },
+  "korean-feminine": {
+    "type": "name",
+    "name": "Korean (Feminine)",
+    "path": "modules/nameforge/models/korean-feminine.json"
+  },
+  "korean-masculine": {
+    "type": "name",
+    "name": "Korean (Masculine)",
+    "path": "modules/nameforge/models/korean-masculine.json"
   },
   "maori-feminine": {
     "type": "name",
@@ -144,6 +199,31 @@
     "name": "Old Norse (Masculine)",
     "path": "modules/nameforge/models/old-norse-masculine.json"
   },
+  "polish-feminine": {
+    "type": "name",
+    "name": "Polish (Feminine)",
+    "path": "modules/nameforge/models/polish-feminine.json"
+  },
+  "polish-masculine": {
+    "type": "name",
+    "name": "Polish (Masculine)",
+    "path": "modules/nameforge/models/polish-masculine.json"
+  },
+  "scottish-feminine": {
+    "type": "name",
+    "name": "Scottish (Feminine)",
+    "path": "modules/nameforge/models/scottish-feminine.json"
+  },
+  "scottish-masculine": {
+    "type": "name",
+    "name": "Scottish (Masculine)",
+    "path": "modules/nameforge/models/scottish-masculine.json"
+  },
+  "scottish-surnames": {
+    "type": "surname",
+    "name": "Scottish (Surnames)",
+    "path": "modules/nameforge/models/scottish-surnames.json"
+  },
   "south-african-feminine": {
     "type": "name",
     "name": "South African (Feminine)",
@@ -153,6 +233,16 @@
     "type": "name",
     "name": "South African (Masculine)",
     "path": "modules/nameforge/models/south-african-masculine.json"
+  },
+  "spanish-feminine": {
+    "type": "name",
+    "name": "Spanish (Feminine)",
+    "path": "modules/nameforge/models/spanish-feminine.json"
+  },
+  "spanish-masculine": {
+    "type": "name",
+    "name": "Spanish (Masculine)",
+    "path": "modules/nameforge/models/spanish-masculine.json"
   },
   "swedish-feminine": {
     "type": "name",
