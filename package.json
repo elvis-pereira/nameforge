@@ -23,8 +23,8 @@
     "jsonlint": "^1.6.3",
     "semantic-release": "^19.0.5",
     "semistandard": "^16.0.1",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1"
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "brain.js": "2.0.0-beta.18",
