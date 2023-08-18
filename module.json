@@ -31,6 +31,23 @@
       "path": "lang/en.json"
     }
   ],
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "css",
+        "hbs",
+        "js",
+        "json"
+      ],
+      "paths": [
+        "dist",
+        "lang",
+        "models",
+        "styles",
+        "templates"
+      ]
+    }
+  },
   "url": "https://gitlab.com/elvispereira/nameforge",
   "manifest": "https://gitlab.com/ElvisPereira/nameforge/-/releases/permalink/latest/downloads/module.json",
   "download": "https://gitlab.com/ElvisPereira/nameforge/-/releases/v1.3.0/downloads/module.zip"

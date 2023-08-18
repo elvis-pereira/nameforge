@@ -185,3 +185,11 @@ Hooks.on('createToken', async (token, data) => {
 
   token.update({ name: tokenName });
 });
+
+Hooks.on('hotReload', (hotReloadData) => {
+  const { packageType, packageId, extension } = hotReloadData;
+
+  if (packageType === 'module' && packageId === 'nameforge' && extension === 'js') {
+    location.reload();
+  }
+});
