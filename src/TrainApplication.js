@@ -11,12 +11,12 @@ export default class TrainApplication extends Application {
     const fileName = modelName.toLowerCase().replace(/\s/g, '-').replace(/[^a-z0-9_-]/g, '');
     const response = await fetch('nameforge-models/models.json');
     const userModels = await response.json();
-    userModels[fileName] = { name: modelName, path: `nameforge-models/${fileName}.json`, type: type };
+    userModels[fileName] = { name: modelName, path: `nameforge-models/${fileName}.json`, type };
 
     await FilePicker.upload('data', 'nameforge-models', new File([model], `${fileName}.json`, { type: 'application/json' }), {}, { notify: false });
     await FilePicker.upload('data', 'nameforge-models', new File([JSON.stringify(userModels, null, 2)], 'models.json', { type: 'application/json' }));
 
-    game.modules.get('nameforge').models.userModels[fileName] = { name: modelName, path: `nameforge-models/${fileName}.json`, type: type };
+    game.modules.get('nameforge').models.userModels[fileName] = { name: modelName, path: `nameforge-models/${fileName}.json`, type };
   }
 
   /**
@@ -56,9 +56,9 @@ export default class TrainApplication extends Application {
       const { modelName, errorThreshold, iterations, learningRate, timeout, trainingData, type } = formData;
       const options = {
         ...(timeout > 0 && { timeout: timeout * 60000 }),
-        ...(iterations > 0 && { iterations: iterations }),
-        ...((learningRate >= 0 && learningRate <= 1) && { learningRate: learningRate }),
-        ...((errorThreshold >= 0 && errorThreshold <= 1) && { errorThreshold: errorThreshold })
+        ...(iterations > 0 && { iterations }),
+        ...((learningRate >= 0 && learningRate <= 1) && { learningRate }),
+        ...((errorThreshold >= 0 && errorThreshold <= 1) && { errorThreshold })
       };
 
       progressBar.max = iterations - 1;
@@ -81,7 +81,7 @@ export default class TrainApplication extends Application {
       const bestIteration = { number: 0, error: 1, model: null };
       const nameforge = new NameForge();
 
-      worker.postMessage({ name: 'train', options: options, names: trainingData });
+      worker.postMessage({ name: 'train', options, names: trainingData });
       worker.onmessage = async (message) => {
         const { name, details, model } = message.data;
         if (name === 'progress') {

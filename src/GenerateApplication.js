@@ -196,8 +196,8 @@ export default class GenerateApplication extends Application {
           this.addNameChanger(nameChangersContainer, this.sheet.actor, {
             name: optionText[type],
             model: data[type].model,
-            options: options,
-            type: type,
+            options,
+            type,
             weight: data[type].weight
           });
         }
@@ -224,7 +224,7 @@ export default class GenerateApplication extends Application {
           this.addNameChanger(nameChangersContainer, this.sheet.actor, {
             name: `${optionText.name}/${optionText.surname}`,
             model: { name: data.name.model, surname: data.surname.model },
-            options: options,
+            options,
             type: 'fullName',
             weight: data.name.weight
           });

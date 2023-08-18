@@ -125,7 +125,7 @@ export default class NameForge {
   selectRandom (data) {
     const entries = data.map(entry => {
       const weight = entry?.weight ?? 1;
-      return { ...entry, ...{ weight: weight } };
+      return { ...entry, ...{ weight } };
     });
 
     const weightSum = entries.reduce((accumulator, entry) => accumulator + Number(entry.weight), 0);

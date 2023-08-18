@@ -77,7 +77,7 @@ Hooks.on('renderDialog', async (dialog, html) => {
     const models = NameForge.filterModels(game.modules.get('nameforge').models);
     const template = await renderTemplate('modules/nameforge/templates/create-new-actor.hbs', {
       config: game.settings.get('nameforge', 'defaultConfig'),
-      models: models,
+      models,
       show: {
         seed: true,
         temperature: false,

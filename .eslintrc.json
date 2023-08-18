@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "worker": true
+  },
+  "extends": [
+    "standard"
+  ],
+  "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-extra-semi": "error"
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "globals": {
+    "Hooks": "readonly",
+    "game": "readonly",
+    "loadTemplates": "readonly",
+    "FilePicker": "readonly",
+    "renderTemplate": "readonly",
+    "FormApplication": "readonly",
+    "ui": "readonly",
+    "Application": "readonly"
+  }
+}
