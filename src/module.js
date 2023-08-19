@@ -2,6 +2,7 @@ import NameForge from './NameForge.js';
 import GenerateApplication from './GenerateApplication.js';
 import TrainApplication from './TrainApplication.js';
 import ConfigMenu from './ConfigMenu.js';
+import UploadMenu from './UploadMenu.js';
 
 const nameforge = new NameForge();
 
@@ -15,12 +16,14 @@ Hooks.once('init', () => {
       name: {
         model: null,
         temperature: 1,
-        count: 1
+        count: 1,
+        original: false
       },
       surname: {
         model: 'none',
         temperature: 1,
-        count: 1
+        count: 1,
+        original: false
       }
     }
   });
@@ -32,6 +35,15 @@ Hooks.once('init', () => {
     icon: 'fas fa-wrench',
     type: ConfigMenu,
     restricted: false
+  });
+
+  game.settings.registerMenu('nameforge', 'modelUpload', {
+    name: game.i18n.localize('NAMEFORGE.SETTINGS.UPLOAD.name'),
+    label: game.i18n.localize('NAMEFORGE.SETTINGS.UPLOAD.label'),
+    hint: game.i18n.localize('NAMEFORGE.SETTINGS.UPLOAD.hint'),
+    icon: 'fas fa-upload',
+    type: UploadMenu,
+    restricted: true
   });
 
   loadTemplates([
@@ -57,18 +69,16 @@ Hooks.on('ready', async () => {
   game.modules.get('nameforge').models = await NameForge.getModels();
 });
 
-Hooks.on('renderSidebarTab', (sidebar, html) => {
-  if (sidebar.options.id === 'actors') {
-    const footerButtons = html[0].querySelector('footer.directory-footer.action-buttons');
-    footerButtons.insertAdjacentHTML('afterbegin', `<button id="generate-names"><i class="fas fa-plus"></i>${game.i18n.localize('NAMEFORGE.BUTTON.generate')}</button>`);
+Hooks.on('renderActorDirectory', (sidebar, html) => {
+  const footerButtons = html[0].querySelector('footer.directory-footer.action-buttons');
+  footerButtons.insertAdjacentHTML('afterbegin', `<button id="generate-names"><i class="fas fa-plus"></i>${game.i18n.localize('NAMEFORGE.BUTTON.generate')}</button>`);
 
-    const generateButton = html[0].querySelector('#generate-names');
-    generateButton.addEventListener('click', () => new GenerateApplication().render(true));
-    if (game.user.hasPermission('FILES_UPLOAD')) {
-      footerButtons.insertAdjacentHTML('beforeend', `<button id="train-model"><i class="fas fa-head-side-brain"></i>${game.i18n.localize('NAMEFORGE.BUTTON.train')}</button>`);
-      const trainButton = html[0].querySelector('#train-model');
-      trainButton.addEventListener('click', () => new TrainApplication().render(true));
-    }
+  const generateButton = html[0].querySelector('#generate-names');
+  generateButton.addEventListener('click', () => new GenerateApplication().render(true));
+  if (game.user.hasPermission('FILES_UPLOAD')) {
+    footerButtons.insertAdjacentHTML('beforeend', `<button id="train-model"><i class="fas fa-head-side-brain"></i>${game.i18n.localize('NAMEFORGE.BUTTON.train')}</button>`);
+    const trainButton = html[0].querySelector('#train-model');
+    trainButton.addEventListener('click', () => new TrainApplication().render(true));
   }
 });
 
@@ -77,7 +87,7 @@ Hooks.on('renderDialog', async (dialog, html) => {
     const models = NameForge.filterModels(game.modules.get('nameforge').models);
     const template = await renderTemplate('modules/nameforge/templates/create-new-actor.hbs', {
       config: game.settings.get('nameforge', 'defaultConfig'),
-      models: models,
+      models,
       show: {
         seed: true,
         temperature: false,
@@ -184,4 +194,12 @@ Hooks.on('createToken', async (token, data) => {
   }
 
   token.update({ name: tokenName });
+});
+
+Hooks.on('hotReload', (hotReloadData) => {
+  const { packageType, packageId, extension } = hotReloadData;
+
+  if (packageType === 'module' && packageId === 'nameforge' && extension === 'js') {
+    location.reload();
+  }
 });

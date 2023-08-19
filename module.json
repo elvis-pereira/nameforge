@@ -2,7 +2,7 @@
   "id": "nameforge",
   "title": "NameForge",
   "description": "Machine learning-assisted random name generator.",
-  "version": "1.3.0",
+  "version": "1.4.0-beta.3",
   "authors": [
     {
       "name": "Bellenus",
@@ -11,7 +11,7 @@
   ],
   "compatibility": {
     "minimum": "10",
-    "verified": "10.291"
+    "verified": "11.307"
   },
   "esmodules": [
     "dist/nameforge.js"
@@ -31,7 +31,24 @@
       "path": "lang/en.json"
     }
   ],
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "css",
+        "hbs",
+        "js",
+        "json"
+      ],
+      "paths": [
+        "dist",
+        "lang",
+        "models",
+        "styles",
+        "templates"
+      ]
+    }
+  },
   "url": "https://gitlab.com/elvispereira/nameforge",
   "manifest": "https://gitlab.com/ElvisPereira/nameforge/-/releases/permalink/latest/downloads/module.json",
-  "download": "https://gitlab.com/ElvisPereira/nameforge/-/releases/v1.3.0/downloads/module.zip"
+  "download": "https://gitlab.com/ElvisPereira/nameforge/-/releases/v1.4.0-beta.3/downloads/module.zip"
 }

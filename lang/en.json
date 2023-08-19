@@ -5,7 +5,8 @@
       "generate": "Generate",
       "save": "Save",
       "stop": "Stop training",
-      "train": "Train"
+      "train": "Train",
+      "upload": "Upload"
     },
     "GENERATE": {
       "actorUpdated": "Actor updated",
@@ -16,6 +17,7 @@
       "names": "Names",
       "namesList": "List of names:",
       "none": "None",
+      "original": "Original",
       "originalName": "Original name ",
       "seed": "Prefix",
       "surnames": "Surnames",
@@ -30,6 +32,7 @@
       "iterations": "The number of times that the names will be feed into the model to be trained, must be a value greater than 0",
       "learningRate": "How much the model will change the values trying to get the predictions right, highers values will speed up training but can increase loss, lower values do the opposite but increase the chances of \"overfitting\" the model",
       "name": "The name that will be shown in the models list",
+      "original": "Randomly select one of the original names used for training instead of generating a new one",
       "seed": "The name prefix, names will include that and will be generated accordingly",
       "temperature": "The randomness of the generated names, values below 1 will generate names closer to the originals while values above 1 do the opposite",
       "timeout": "The maximum number of minutes that the training can take, use 0 to disable",
@@ -42,6 +45,12 @@
       "userModels": "User"
     },
     "SETTINGS": {
+      "UPLOAD": {
+        "hint": "Upload a trained model to be used",
+        "label": "Upload",
+        "name": "Upload model"
+      },
+      "file": "File",
       "hint": "Configure the default values used for name generation",
       "label": "Configure",
       "name": "Name generation",
@@ -50,7 +59,8 @@
     "TITLE": {
       "config": "Configure default values",
       "generate": "Generate new names",
-      "train": "Train new model"
+      "train": "Train new model",
+      "upload": "Upload model"
     },
     "TRAIN": {
       "errorThreshold": "Loss",

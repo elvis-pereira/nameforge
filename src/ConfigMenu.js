@@ -43,12 +43,14 @@ export default class ConfigMenu extends FormApplication {
         name: {
           model: formData.nameModel,
           count: formData.nameCount,
-          temperature: formData.nameTemperature
+          temperature: formData.nameTemperature,
+          original: formData.nameOriginal
         },
         surname: {
           model: formData.surnameModel,
           count: formData.surnameCount,
-          temperature: formData.surnameTemperature
+          temperature: formData.surnameTemperature,
+          original: formData.surnameOriginal
         }
       };
 

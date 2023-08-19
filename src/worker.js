@@ -10,7 +10,7 @@ self.onmessage = async (message) => {
 
     options.callbackPeriod = 1;
     options.callback = (details) => {
-      self.postMessage({ name: 'progress', details: details, model: JSON.stringify(model.toJSON(), null, 2) });
+      self.postMessage({ name: 'progress', details, model: JSON.stringify(model.toJSON(), null, 2) });
     };
 
     nameforge.trainModel(trainingData, model, options);
