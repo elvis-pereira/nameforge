@@ -29,8 +29,11 @@
       <label data-tooltip="{{localize 'NAMEFORGE.INFO.weight'}}">{{localize 'NAMEFORGE.GENERATE.weight'}}</label>
     </div>
     {{/if}}
+    <div class="nf-column">
+      <label data-tooltip="{{localize 'NAMEFORGE.INFO.original'}}">{{localize 'NAMEFORGE.GENERATE.original'}}</label>
+    </div>
   </li>
-  <li class="flexrow">
+  <li class=" flexrow">
     <div class="nf-column">
       <label>{{localize 'NAMEFORGE.GENERATE.names'}}</label>
     </div>
@@ -73,6 +76,9 @@
       <input type="number" name="nameWeight" value="1" min="1" required>
     </div>
     {{/if}}
+    <div class="nf-column">
+      <input type="checkbox" name="nameOriginal" {{checked config.name.original}}>
+    </div>
   </li>
   <li class="flexrow">
     <div class="nf-column">
@@ -104,7 +110,8 @@
     {{/if}}
     {{#if show.temperature}}
     <div class="nf-column nf-text-centered">
-      <input type="number" name="surnameTemperature" value="{{config.surname.temperature}}" min="0.1" step="0.1" required>
+      <input type="number" name="surnameTemperature" value="{{config.surname.temperature}}" min="0.1" step="0.1"
+        required>
     </div>
     {{/if}}
     {{#if show.count}}
@@ -117,5 +124,8 @@
       <input type="number" name="surnameWeight" value="1" min="1" required>
     </div>
     {{/if}}
+    <div class="nf-column">
+      <input type="checkbox" name="surnameOriginal" {{checked config.surname.original}}>
+    </div>
   </li>
 </ol>

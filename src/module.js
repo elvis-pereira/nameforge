@@ -15,12 +15,14 @@ Hooks.once('init', () => {
       name: {
         model: null,
         temperature: 1,
-        count: 1
+        count: 1,
+        original: false
       },
       surname: {
         model: 'none',
         temperature: 1,
-        count: 1
+        count: 1,
+        original: false
       }
     }
   });
@@ -57,18 +59,16 @@ Hooks.on('ready', async () => {
   game.modules.get('nameforge').models = await NameForge.getModels();
 });
 
-Hooks.on('renderSidebarTab', (sidebar, html) => {
-  if (sidebar.options.id === 'actors') {
-    const footerButtons = html[0].querySelector('footer.directory-footer.action-buttons');
-    footerButtons.insertAdjacentHTML('afterbegin', `<button id="generate-names"><i class="fas fa-plus"></i>${game.i18n.localize('NAMEFORGE.BUTTON.generate')}</button>`);
+Hooks.on('renderActorDirectory', (sidebar, html) => {
+  const footerButtons = html[0].querySelector('footer.directory-footer.action-buttons');
+  footerButtons.insertAdjacentHTML('afterbegin', `<button id="generate-names"><i class="fas fa-plus"></i>${game.i18n.localize('NAMEFORGE.BUTTON.generate')}</button>`);
 
-    const generateButton = html[0].querySelector('#generate-names');
-    generateButton.addEventListener('click', () => new GenerateApplication().render(true));
-    if (game.user.hasPermission('FILES_UPLOAD')) {
-      footerButtons.insertAdjacentHTML('beforeend', `<button id="train-model"><i class="fas fa-head-side-brain"></i>${game.i18n.localize('NAMEFORGE.BUTTON.train')}</button>`);
-      const trainButton = html[0].querySelector('#train-model');
-      trainButton.addEventListener('click', () => new TrainApplication().render(true));
-    }
+  const generateButton = html[0].querySelector('#generate-names');
+  generateButton.addEventListener('click', () => new GenerateApplication().render(true));
+  if (game.user.hasPermission('FILES_UPLOAD')) {
+    footerButtons.insertAdjacentHTML('beforeend', `<button id="train-model"><i class="fas fa-head-side-brain"></i>${game.i18n.localize('NAMEFORGE.BUTTON.train')}</button>`);
+    const trainButton = html[0].querySelector('#train-model');
+    trainButton.addEventListener('click', () => new TrainApplication().render(true));
   }
 });
 

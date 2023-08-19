@@ -11,7 +11,7 @@
   ],
   "compatibility": {
     "minimum": "10",
-    "verified": "10.291"
+    "verified": "11.307"
   },
   "esmodules": [
     "dist/nameforge.js"

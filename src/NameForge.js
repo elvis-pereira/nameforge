@@ -125,7 +125,7 @@ export default class NameForge {
   selectRandom (data) {
     const entries = data.map(entry => {
       const weight = entry?.weight ?? 1;
-      return { ...entry, ...{ weight } };
+      return { value: entry, weight };
     });
 
     const weightSum = entries.reduce((accumulator, entry) => accumulator + Number(entry.weight), 0);
@@ -135,7 +135,7 @@ export default class NameForge {
       const entry = entries[index];
 
       if (selectedWeight < entry.weight) {
-        return entry;
+        return entry.value;
       }
 
       selectedWeight -= entry.weight;
@@ -163,10 +163,13 @@ export default class NameForge {
   generateName (model, userOptions = {}) {
     const options = {
       count: 1,
+      original: false,
       seed: '',
       temperature: 1,
       ...userOptions
     };
+
+    const originalNames = model.options.dataFormatter.values;
 
     if (options.temperature <= 0 || isNaN(options.temperature)) {
       options.temperature = 1;
@@ -176,10 +179,21 @@ export default class NameForge {
       const names = new Set();
 
       while (names.size < options.count) {
-        names.add(this.capitalize(options.seed + model.run(options.seed.toLowerCase(), true, options.temperature)));
+        if (options.original) {
+          if (options.count > originalNames.length) {
+            options.count = originalNames.length;
+          }
+          names.add(this.capitalize(this.selectRandom(originalNames)));
+        } else {
+          names.add(this.capitalize(options.seed + model.run(options.seed.toLowerCase(), true, options.temperature)));
+        }
       }
 
       return Array.from(names);
+    }
+
+    if (options.original) {
+      return [this.capitalize(this.selectRandom(originalNames))];
     }
 
     const name = this.capitalize(options.seed + model.run(options.seed.toLowerCase(), true, options.temperature));
@@ -198,12 +212,14 @@ export default class NameForge {
     const options = {
       name: {
         count: 1,
+        original: false,
         seed: '',
         temperature: 1,
         ...userOptions.name
       },
       surname: {
         count: 1,
+        original: false,
         seed: '',
         temperature: 1,
         ...userOptions.surname
