@@ -5,7 +5,8 @@
       "generate": "Generate",
       "save": "Save",
       "stop": "Stop training",
-      "train": "Train"
+      "train": "Train",
+      "upload": "Upload"
     },
     "GENERATE": {
       "actorUpdated": "Actor updated",
@@ -44,6 +45,12 @@
       "userModels": "User"
     },
     "SETTINGS": {
+      "UPLOAD": {
+        "hint": "Upload a trained model to be used",
+        "label": "Upload",
+        "name": "Upload model"
+      },
+      "file": "File",
       "hint": "Configure the default values used for name generation",
       "label": "Configure",
       "name": "Name generation",
@@ -52,7 +59,8 @@
     "TITLE": {
       "config": "Configure default values",
       "generate": "Generate new names",
-      "train": "Train new model"
+      "train": "Train new model",
+      "upload": "Upload model"
     },
     "TRAIN": {
       "errorThreshold": "Loss",

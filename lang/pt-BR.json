@@ -5,7 +5,8 @@
       "generate": "Gerar",
       "save": "Salvar",
       "stop": "Parar treinamento",
-      "train": "Treinar"
+      "train": "Treinar",
+      "upload": "Enviar"
     },
     "GENERATE": {
       "actorUpdated": "Ator atualizado",
@@ -44,6 +45,12 @@
       "userModels": "Usuário"
     },
     "SETTINGS": {
+      "UPLOAD": {
+        "hint": "Carregue um modelo treinado para ser usado",
+        "label": "Carregar",
+        "name": "Carregar modelo"
+      },
+      "file": "Arquivo",
       "hint": "Configure os valores padrão usados para geração de nomes",
       "label": "Configurar",
       "name": "Geração de nomes",
@@ -52,7 +59,8 @@
     "TITLE": {
       "config": "Configurar valores padrão",
       "generate": "Gerar novos nomes",
-      "train": "Treinar novo modelo"
+      "train": "Treinar novo modelo",
+      "upload": "Carregar modelo"
     },
     "TRAIN": {
       "errorThreshold": "Perda",

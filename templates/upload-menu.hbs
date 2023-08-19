@@ -1,0 +1,34 @@
+<div class="nameforge-content">
+  <form id="nameforge">
+    <ol class="nf-table">
+      <li class="flexrow nf-table-header">
+        <div class="nf-column">
+          <label>{{localize 'NAMEFORGE.TRAIN.name'}}</label>
+        </div>
+        <div class="nf-column">
+          <label>{{localize 'NAMEFORGE.TRAIN.type'}}</label>
+        </div>
+        <div class="nf-column">
+          <label>{{localize 'NAMEFORGE.SETTINGS.file'}}</label>
+        </div>
+      </li>
+      <li class="flexrow">
+        <div class="nf-column">
+          <input type="text" name="name" required>
+        </div>
+        <div class="nf-column">
+          <select name="type" required>
+            <option value="name">{{localize 'NAMEFORGE.GENERATE.names'}}</option>
+            <option value="surname">{{localize 'NAMEFORGE.GENERATE.surnames'}}</option>
+          </select>
+        </div>
+        <div class="nf-column">
+          <input type="file" name="model" accept=".json" required>
+        </div>
+      </li>
+    </ol>
+    <div class="flexrow" id="actionButtons">
+      <button name="save"><i class="fas fa-upload"></i>{{localize 'NAMEFORGE.BUTTON.upload'}}</button>
+    </div>
+  </form>
+</div>

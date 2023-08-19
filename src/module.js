@@ -2,6 +2,7 @@ import NameForge from './NameForge.js';
 import GenerateApplication from './GenerateApplication.js';
 import TrainApplication from './TrainApplication.js';
 import ConfigMenu from './ConfigMenu.js';
+import UploadMenu from './UploadMenu.js';
 
 const nameforge = new NameForge();
 
@@ -34,6 +35,15 @@ Hooks.once('init', () => {
     icon: 'fas fa-wrench',
     type: ConfigMenu,
     restricted: false
+  });
+
+  game.settings.registerMenu('nameforge', 'modelUpload', {
+    name: game.i18n.localize('NAMEFORGE.SETTINGS.UPLOAD.name'),
+    label: game.i18n.localize('NAMEFORGE.SETTINGS.UPLOAD.label'),
+    hint: game.i18n.localize('NAMEFORGE.SETTINGS.UPLOAD.hint'),
+    icon: 'fas fa-upload',
+    type: UploadMenu,
+    restricted: true
   });
 
   loadTemplates([
