@@ -30,7 +30,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "brain.js": "2.0.0-beta.18",
+    "brain.js": "2.0.0-beta.23",
     "gpu.js": "^2.16.0"
   }
 }
