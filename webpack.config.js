@@ -9,7 +9,7 @@ const config = {
 
   output: {
     clean: true,
-    publicPath: '/modules/nameforge/dist/',
+    publicPath: 'modules/nameforge/dist/',
     filename: '[name].js',
     path: resolve('./dist')
   },
