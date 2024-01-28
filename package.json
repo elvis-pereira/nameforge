@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "brain.js": "2.0.0-beta.23",
-    "gpu.js": "^2.16.0"
+    "gpu.js": "1.10.4"
   }
 }
