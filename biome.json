@@ -1,0 +1,51 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.4.6/schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on",
+				"useSortedKeys": "on"
+			}
+		}
+	},
+
+	"files": {
+		"includes": ["**/*.json", "**/*.js", "**/*.d.ts", "!!**/dist"]
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": true,
+		"lineWidth": 120
+	},
+	"javascript": {
+		"formatter": {
+			"lineWidth": 120,
+			"quoteStyle": "single",
+			"semicolons": "always",
+			"trailingCommas": "none"
+		}
+	},
+	"linter": {
+		"rules": {
+			"complexity": {
+				"noExcessiveCognitiveComplexity": "error"
+			},
+			"performance": {
+				"noAwaitInLoops": "error"
+			}
+		}
+	},
+
+	"overrides": [
+		{
+			"assist": {
+				"actions": {
+					"source": {
+						"useSortedKeys": "off"
+					}
+				}
+			},
+			"includes": ["**/*.json"]
+		}
+	]
+}

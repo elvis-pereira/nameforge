@@ -31,26 +31,22 @@ stages:
 variables:
   PACKAGE_REGISTRY_URL: $CI_API_V4_URL/projects/$CI_PROJECT_ID/packages/generic/module
 
-semistandard:
+biome:
   stage: test
   script:
-    - pnpm run lint
+    - pnpm biome ci --reporter=gitlab --reporter-file=code-quality.json
+  artifacts:
+    when: always
+    reports:
+      codequality: code-quality.json
   rules:
     - changes:
         paths:
         - src/**/*.js
         - scripts/**/*.js
-
-jsonlint:
-  stage: test
-  script:
-    - pnpm run lint:json
-  rules:
-    - changes:
-        paths:
-          - module.json
-          - lang/**/*.json
-          - models/**/*.json
+        - module.json
+        - lang/**/*.json
+        - models/**/*.json
 
 build:
   stage: build

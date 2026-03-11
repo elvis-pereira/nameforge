@@ -1,36 +1,33 @@
 {
-  "private": true,
-  "name": "@elvispereira/nameforge",
-  "version": "1.0.0",
-  "description": "Machine learning-assisted random name generator.",
-  "type": "module",
-  "scripts": {
-    "build": "webpack build --mode=production",
-    "build:watch": "webpack watch --mode=development",
-    "package": "node scripts/package.js",
-    "lint": "eslint --no-inline-config --ignore-path .gitignore .",
-    "lint:fix": "eslint --fix --no-inline-config --ignore-path .gitignore .",
-    "lint:json": "jsonlint -q --enforce-double-quotes lang module.json models",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Elvis Pereira",
-  "license": "MIT",
-  "devDependencies": {
-    "@semantic-release/commit-analyzer": "^9.0.2",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/gitlab": "^9.5.1",
-    "adm-zip": "^0.5.10",
-    "conventional-changelog-conventionalcommits": "^5.0.0",
-    "esbuild-loader": "^2.21.0",
-    "eslint": "^8.47.0",
-    "eslint-config-standard": "^17.1.0",
-    "jsonlint": "^1.6.3",
-    "semantic-release": "^19.0.5",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
-  },
-  "dependencies": {
-    "brain.js": "2.0.0-beta.23",
-    "gpu.js": "1.10.4"
-  }
+	"private": true,
+	"name": "@elvispereira/nameforge",
+	"version": "1.0.0",
+	"description": "Machine learning-assisted random name generator.",
+	"type": "module",
+	"scripts": {
+		"build": "webpack build --mode=production",
+		"build:watch": "webpack watch --mode=development",
+		"package": "node scripts/package.js",
+		"lint": "biome check",
+		"lint:fix": "biome check --write",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Elvis Pereira",
+	"license": "MIT",
+	"devDependencies": {
+		"@biomejs/biome": "2.4.6",
+		"@semantic-release/commit-analyzer": "^9.0.2",
+		"@semantic-release/git": "^10.0.1",
+		"@semantic-release/gitlab": "^9.5.1",
+		"adm-zip": "^0.5.10",
+		"conventional-changelog-conventionalcommits": "^5.0.0",
+		"esbuild-loader": "^2.21.0",
+		"semantic-release": "^19.0.5",
+		"webpack": "^5.88.2",
+		"webpack-cli": "^5.1.4"
+	},
+	"dependencies": {
+		"brain.js": "2.0.0-beta.23",
+		"gpu.js": "1.10.4"
+	}
 }
