@@ -1,4 +1,7 @@
-image: node:18-alpine
+image: oven/bun:1.3-debian
+
+variables:
+  BUN_INSTALL_CACHE_DIR: "$CI_PROJECT_DIR/.bun-cache"
 
 .releases:
   rules:
@@ -13,15 +16,12 @@ workflow:
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
-    - .pnpm-store
+    - .bun-cache
 
 before_script:
-  - apk update --quiet
-  - apk add --quiet curl git ack python3 build-base libxi-dev mesa-dev glew-dev pkgconfig
-  - curl -LSs https://unpkg.com/@pnpm/self-installer | node
-  - pnpm config set store-dir .pnpm-store
-  - pnpm set verify-store-integrity false
-  - pnpm install
+  - apt-get update -qq
+  - apt-get install -y -qq curl git ack python3 build-essential libxi-dev libgl1-mesa-dev libglew-dev pkg-config
+  - bun ci
 
 stages:
   - test
@@ -34,7 +34,7 @@ variables:
 biome:
   stage: test
   script:
-    - pnpm biome ci --reporter=gitlab --reporter-file=code-quality.json
+    - bun biome ci --reporter=gitlab --reporter-file=code-quality.json
   artifacts:
     when: always
     reports:
@@ -51,11 +51,11 @@ biome:
 build:
   stage: build
   script:
-    - export VERSION=$(pnpm --silent exec semantic-release --dry-run | ack -io '(?<=The next release version is )(.*)(?=$)') && echo VERSION=$VERSION >> build.env
+    - export VERSION=$(bun semantic-release --dry-run | ack -io '(?<=The next release version is )(.*)(?=$)') && echo VERSION=$VERSION >> build.env
     - export MANIFEST=$CI_PROJECT_URL/-/releases/permalink/latest/downloads/module.json && echo MANIFEST=$MANIFEST >> build.env
     - export DOWNLOAD=$CI_PROJECT_URL/-/releases/v$VERSION/downloads/module.zip && echo DOWNLOAD=$DOWNLOAD >> build.env
-    - pnpm run build
-    - pnpm run package
+    - bun run build
+    - bun run package
   artifacts:
     name: module
     when: on_success
@@ -78,7 +78,7 @@ publish:
 release:
   stage: release
   script:
-    - pnpm --silent exec semantic-release
+    - bun semantic-release
   dependencies:
     - build
   extends: .releases

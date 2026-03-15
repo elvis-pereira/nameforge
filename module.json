@@ -1,54 +1,39 @@
 {
-  "id": "nameforge",
-  "title": "NameForge",
-  "description": "Machine learning-assisted random name generator.",
-  "version": "1.4.1",
-  "authors": [
-    {
-      "name": "Bellenus",
-      "url": "https://discord.gg/XNC86FBnQ2"
-    }
-  ],
-  "compatibility": {
-    "minimum": "10",
-    "verified": "11.307"
-  },
-  "esmodules": [
-    "dist/nameforge.js"
-  ],
-  "styles": [
-    "styles/nameforge.css"
-  ],
-  "languages": [
-    {
-      "lang": "pt-BR",
-      "name": "Português (Brasil)",
-      "path": "lang/pt-BR.json"
-    },
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json"
-    }
-  ],
-  "flags": {
-    "hotReload": {
-      "extensions": [
-        "css",
-        "hbs",
-        "js",
-        "json"
-      ],
-      "paths": [
-        "dist",
-        "lang",
-        "models",
-        "styles",
-        "templates"
-      ]
-    }
-  },
-  "url": "https://gitlab.com/elvispereira/nameforge",
-  "manifest": "https://gitlab.com/ElvisPereira/nameforge/-/releases/permalink/latest/downloads/module.json",
-  "download": "https://gitlab.com/ElvisPereira/nameforge/-/releases/v1.4.1/downloads/module.zip"
+	"id": "nameforge",
+	"title": "NameForge",
+	"description": "Machine learning-assisted random name generator.",
+	"version": "1.4.1",
+	"authors": [
+		{
+			"name": "Bellenus",
+			"url": "https://discord.gg/XNC86FBnQ2"
+		}
+	],
+	"compatibility": {
+		"minimum": "10",
+		"verified": "11.307"
+	},
+	"esmodules": ["dist/module.js"],
+	"styles": ["styles/nameforge.css"],
+	"languages": [
+		{
+			"lang": "pt-BR",
+			"name": "Português (Brasil)",
+			"path": "lang/pt-BR.json"
+		},
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"flags": {
+		"hotReload": {
+			"extensions": ["css", "hbs", "js", "json"],
+			"paths": ["dist", "lang", "models", "styles", "templates"]
+		}
+	},
+	"url": "https://gitlab.com/elvispereira/nameforge",
+	"manifest": "https://gitlab.com/ElvisPereira/nameforge/-/releases/permalink/latest/downloads/module.json",
+	"download": "https://gitlab.com/ElvisPereira/nameforge/-/releases/v1.4.1/downloads/module.zip"
 }
