@@ -10,7 +10,7 @@
 	},
 
 	"files": {
-		"includes": ["**/*.json", "**/*.js", "**/*.d.ts", "!!**/dist"]
+		"includes": ["**/*.json", "**/*.js", "**/*.d.ts", "**/*.html", "!!**/dist"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -23,6 +23,12 @@
 			"quoteStyle": "single",
 			"semicolons": "always",
 			"trailingCommas": "none"
+		}
+	},
+	"html": {
+		"formatter": {
+			"enabled": true,
+			"lineWidth": 120
 		}
 	},
 	"linter": {

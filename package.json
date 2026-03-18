@@ -24,6 +24,7 @@
 		"semantic-release": "^19.0.5"
 	},
 	"dependencies": {
+		"alpinejs": "3.15.8",
 		"brain.js": "2.0.0-beta.23",
 		"gpu.js": "1.10.4"
 	}
