@@ -4,19 +4,22 @@
 		"actions": {
 			"source": {
 				"organizeImports": "on",
-				"useSortedKeys": "on"
+				"useSortedKeys": "on",
+				"useSortedProperties": "on"
 			}
 		}
 	},
 
 	"files": {
-		"includes": ["**/*.json", "**/*.js", "**/*.d.ts", "**/*.html", "!!**/dist"]
+		"includes": ["**/*.json", "**/*.js", "**/*.d.ts", "**/*.html", "**/*.css", "!!**/dist"]
 	},
+
 	"formatter": {
 		"enabled": true,
 		"formatWithErrors": true,
 		"lineWidth": 120
 	},
+
 	"javascript": {
 		"formatter": {
 			"lineWidth": 120,
@@ -25,12 +28,21 @@
 			"trailingCommas": "none"
 		}
 	},
+
 	"html": {
 		"formatter": {
 			"enabled": true,
 			"lineWidth": 120
 		}
 	},
+
+	"css": {
+		"formatter": {
+			"enabled": true,
+			"lineWidth": 120
+		}
+	},
+
 	"linter": {
 		"rules": {
 			"complexity": {
