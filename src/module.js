@@ -1,13 +1,15 @@
-import { Alpine } from 'alpinejs';
+import Alpine from 'alpinejs';
 import ConfigMenu from './ConfigMenu.js';
 import GenerateApplication from './GenerateApplication.js';
 import NameForge from './NameForge.js';
 import TrainApplication from './TrainApplication.js';
 import UploadMenu from './UploadMenu.js';
+import { i18n } from './utils.js';
 
 const nameforge = new NameForge();
 
 Hooks.once('init', () => {
+	Alpine.plugin(i18n);
 	Alpine.start();
 	game.settings.register('nameforge', 'defaultConfig', {
 		config: false,
